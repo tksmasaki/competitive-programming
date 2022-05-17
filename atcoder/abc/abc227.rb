@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-nn, nk, na = gets.split(' ').map(&:to_i)
-result = na + nk % nn - 1
+nn, nk, na = gets.split.map(&:to_i)
+result = na + (nk % nn) - 1
 result += 1 if result.zero?
 puts(result <= nn ? result : result - nn)
 
@@ -14,10 +14,10 @@ puts(result <= nn ? result : result - nn)
 # puts (k + (a - 1)) % n == 0 ? n : (k + (a - 1)) % n
 
 gets
-expect = gets.split(' ').map(&:to_i)
+expect = gets.split.map(&:to_i)
 (1..1000).each do |a|
   (1..1000).each do |b|
-    val = (4 * a * b + 3 * (a + b))
+    val = ((4 * a * b) + (3 * (a + b)))
     expect.delete_if { |v| v == val }
     break if expect.count.zero?
   end

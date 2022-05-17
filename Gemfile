@@ -4,5 +4,7 @@ source 'https://rubygems.org'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-gem 'awesome_print'
-gem 'rubocop-fjord'
+group :development do
+  gem 'awesome_print'
+  gem 'rubocop', require: false
+end

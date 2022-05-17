@@ -6,7 +6,7 @@ r = 0
 a.times do |i|
   b.times do |j|
     c.times do |k|
-      r += 1 if 500 * i + 100 * j + 50 * k == s
+      r += 1 if (500 * i) + (100 * j) + (50 * k) == s
     end
   end
 end

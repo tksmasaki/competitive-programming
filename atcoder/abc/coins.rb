@@ -5,7 +5,7 @@ b = gets.to_i + 1
 c = gets.to_i + 1
 total = gets.to_i
 count = 0
-a.times { |i| b.times { |j| c.times { |k| count += 1 if (500 * i + 100 * j + 50 * k) == total } } }
+a.times { |i| b.times { |j| c.times { |k| count += 1 if ((500 * i) + (100 * j) + (50 * k)) == total } } }
 puts count
 
 # a, b, c, x = 4.times.map { gets.to_i }

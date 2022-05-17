@@ -1,5 +1,5 @@
 l, r = gets.split.map { |s| s.to_i - 1 }
-s = gets.chomp.split('')
+s = gets.chomp.chars
 result = if l.zero?
            s.slice!(l..r).reverse.join + s.join
          else

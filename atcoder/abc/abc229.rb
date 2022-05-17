@@ -3,8 +3,8 @@
 # 2 つの異なる黒マス同士が辺で接している時、またその時に限りそれら 2 つの黒マスは直接行き来できます。
 # 黒マスのみをいくつか通ることによって、どの 2 つの黒マス同士も(直接または間接的に)行き来できるかどうか判定してください。
 
-a = gets.chomp.split('')
-a.push(*gets.chomp.split(''))
+a = gets.chomp.chars
+a.push(*gets.chomp.chars)
 result = (a[0] == '.' && a[3] == '.') || (a[1] == '.' && a[2] == '.') ? 'No' : 'Yes'
 puts result
 
@@ -12,8 +12,8 @@ puts result
 # A+B を(十進法で)計算する時、繰り上がりが生じないなら Easy 、生じるなら Hard と出力してください。
 
 a, b = gets.chomp.split
-a = a.split('').map(&:to_i).reverse
-b = b.split('').map(&:to_i).reverse
+a = a.chars.map(&:to_i).reverse
+b = b.chars.map(&:to_i).reverse
 result = 'Easy'
 [a, b].min_by(&:length).length.times do |i|
   if a[i] + b[i] >= 10
