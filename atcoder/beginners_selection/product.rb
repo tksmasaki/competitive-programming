@@ -1,2 +1,2 @@
-a = gets.chomp.split.map(&:to_i)
-puts((a[0] * a[1]).even? ? 'Even' : 'Odd')
+a, b = gets.split.map(&:to_i)
+puts((a * b).even? ? 'Even' : 'Odd')
