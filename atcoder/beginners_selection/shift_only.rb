@@ -1,8 +1,8 @@
 gets
-a = gets.chomp.split.map(&:to_i)
-r = 0
-while a.all?(&:even?)
-  r += 1
-  a.map! { |v| v.div 2 }
+numbers = gets.split.map(&:to_i)
+count = 0
+while numbers.all?(&:even?)
+  count += 1
+  numbers.map! { |v| v / 2 }
 end
-puts r
+puts count
