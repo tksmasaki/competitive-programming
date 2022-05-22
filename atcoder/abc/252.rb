@@ -14,25 +14,16 @@ b.each do |v|
 end
 puts result
 
-# C - Slot Strategy => WA
+# C - Slot Strategy => AC (fixed)
 reels = []
 gets.to_i.times { reels << gets.chars.map(&:to_i) }
-init = true
-result = 0
+counts = Array.new(10) { Array.new(10, 0) }
 (0..9).each do |i|
-  tmp_result = 0
-  indexes = []
   reels.each do |reel|
-    indexes << reel.index(i)
+    counts[i][reel.index(i)] += 1
   end
-  tmp_result += indexes.max
-  reps = []
-  (0..9).each do |v|
-    reps << (indexes.count(v) - 1)
-  end
-  rep_max = reps.max
-  tmp_result += 10 * rep_max
-  result = tmp_result if tmp_result < result || init
-  init = false
 end
-puts result
+results = counts.map do |count|
+  count.map.with_index { |c, i| (10 * (c - 1)) + i }.max
+end
+puts results.min
