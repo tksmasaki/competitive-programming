@@ -1,18 +1,13 @@
 # A - ASCII code => AC
-n = gets.to_i
-a = %w[a b c d e f g h i j k l m n o p q o s t u v w x y z]
-puts a[n - 97]
+puts(gets.to_i.chr)
 
 # B - Takahashi's Failure => AC
 gets
 a = gets.split.map(&:to_i)
 b = gets.split.map(&:to_i)
-result = 'No'
 max = a.max
-b.each do |v|
-  result = 'Yes' if a[v - 1] == max
-end
-puts result
+flag = b.any? { |v| a[v - 1] == max }
+puts flag ? 'Yes' : 'No'
 
 # C - Slot Strategy => AC (fixed)
 reels = []
