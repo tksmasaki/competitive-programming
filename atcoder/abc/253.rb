@@ -3,15 +3,15 @@ a, b, c = gets.split
 puts(b == [a, b, c].sort[1] ? 'Yes' : 'No')
 
 # [B \- Distance Between Tokens](https://atcoder.jp/contests/abc253/tasks/abc253_b)
-h, _w = gets.split.map(&:to_i)
-indexes = []
+h, w = gets.split.map(&:to_i)
+s = h.times.map { gets.chomp.chars }
+peaces = []
 h.times do |i|
-  index = gets.chomp.chars.index('o')
-  indexes.push([i, index]) if index
+  w.times do |j|
+    peaces << [i, j] if s[i][j] == 'o'
+  end
 end
-ans = (indexes[0][0] - indexes[1][0]).abs + (indexes[0][1] - indexes[1][1]).abs
-puts ans
-# => RE: 2
+puts((peaces[0][0] - peaces[1][0]).abs + (peaces[0][1] - peaces[1][1]).abs)
 
 # [C \- Max \- Min Query](https://atcoder.jp/contests/abc253/tasks/abc253_c)
 n = gets.to_i
